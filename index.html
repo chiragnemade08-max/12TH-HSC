@@ -8,716 +8,748 @@
 
 <style>
 :root {
-  --blue: #155eef;
-  --navy: #102d60;
-  --pale: #edf4ff;
-  --ink: #1d3557;
-  --muted: #6c7f9d;
-  --line: #dce7f7;
-  --bg: #f5f8ff;
+  --blue:#155eef;
+  --navy:#102d60;
+  --pale:#edf4ff;
+  --ink:#1d3557;
+  --muted:#6c7f9d;
+  --line:#dce7f7;
+  --bg:#f5f8ff;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing:border-box;
 }
 
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
 }
 
 button {
-  cursor: pointer;
+  cursor:pointer;
 }
 
 /* HEADER */
 
 header {
-  background: linear-gradient(120deg, #10377f, #155eef, #62aaff);
-  color: white;
-  padding: 22px 6% 45px;
-  position: relative;
-  overflow: hidden;
+  background:linear-gradient(120deg,#10377f,#155eef,#62aaff);
+  color:white;
+  padding:22px 6% 45px;
+  position:relative;
+  overflow:hidden;
 }
 
 header::after {
-  content: "S";
-  position: absolute;
-  right: 7%;
-  top: -100px;
-  font: 900 280px Georgia;
-  color: #ffffff12;
+  content:"S";
+  position:absolute;
+  right:7%;
+  top:-100px;
+  font:900 280px Georgia;
+  color:#ffffff12;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  z-index:1;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
 .logo {
-  width: 45px;
-  height: 45px;
-  background: white;
-  color: var(--blue);
-  border-radius: 13px;
-  display: grid;
-  place-items: center;
-  font: bold 28px Georgia;
+  width:45px;
+  height:45px;
+  background:white;
+  color:var(--blue);
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  font:bold 28px Georgia;
 }
 
 .brand-name {
-  font-weight: 900;
-  letter-spacing: 2px;
+  font-weight:900;
+  letter-spacing:2px;
 }
 
 .hero {
-  margin-top: 40px;
-  position: relative;
-  z-index: 1;
+  margin-top:40px;
+  position:relative;
+  z-index:1;
 }
 
 .eyebrow {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #d9e8ff;
-  font-weight: bold;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#d9e8ff;
+  font-weight:bold;
 }
 
 h1 {
-  font: bold clamp(35px, 5vw, 58px) Georgia;
-  margin: 12px 0;
+  font:bold clamp(35px,5vw,58px) Georgia;
+  margin:12px 0;
 }
 
 .hero p {
-  max-width: 650px;
-  color: #e7f0ff;
+  max-width:650px;
+  color:#e7f0ff;
 }
 
 .actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 22px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
 }
 
 .btn {
-  padding: 12px 18px;
-  border-radius: 11px;
-  font-weight: bold;
-  border: none;
+  padding:12px 18px;
+  border-radius:11px;
+  font-weight:bold;
+  border:none;
 }
 
 .btn-primary {
-  background: white;
-  color: var(--blue);
+  background:white;
+  color:var(--blue);
 }
 
 .btn-secondary {
-  background: #ffffff20;
-  color: white;
-  border: 1px solid #ffffff70;
+  background:#ffffff20;
+  color:white;
+  border:1px solid #ffffff70;
 }
 
 /* MAIN */
 
 main {
-  max-width: 1200px;
-  margin: 28px auto 45px;
-  padding: 0 22px;
+  max-width:1200px;
+  margin:28px auto 45px;
+  padding:0 22px;
 }
 
 .intro {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 17px;
-  padding: 17px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:17px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
 }
 
 .intro strong {
-  font: bold 19px Georgia;
-  color: var(--navy);
+  font:bold 19px Georgia;
+  color:var(--navy);
 }
 
 .intro p {
-  color: var(--muted);
-  font-size: 12px;
-  margin: 3px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  margin:3px 0 0;
 }
 
 .count {
-  background: var(--pale);
-  color: var(--blue);
-  padding: 7px 12px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: bold;
+  background:var(--pale);
+  color:var(--blue);
+  padding:7px 12px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:bold;
 }
 
 /* SEARCH */
 
 .toolbar {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
 }
 
 .search {
-  flex: 1;
-  min-width: 220px;
+  flex:1;
+  min-width:220px;
 }
 
 .search input,
 select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  background: white;
-  color: var(--ink);
-  font-size: 14px;
+  width:100%;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  background:white;
+  color:var(--ink);
+  font-size:14px;
 }
 
 select {
-  max-width: 250px;
+  max-width:250px;
 }
 
 /* WEBSITE LAYOUT */
 
 .layout {
-  display: grid;
-  grid-template-columns: 290px 1fr;
-  gap: 20px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:290px 1fr;
+  gap:20px;
+  align-items:start;
 }
 
 .sidebar,
 .app-card {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 19px;
-  box-shadow: 0 14px 38px #1c4d9110;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:19px;
+  box-shadow:0 14px 38px #1c4d9110;
 }
 
 .sidebar {
-  padding: 18px;
-  position: sticky;
-  top: 12px;
+  padding:18px;
+  position:sticky;
+  top:12px;
 }
 
 .side-title {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: var(--muted);
-  font-weight: bold;
-  margin-bottom: 13px;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:var(--muted);
+  font-weight:bold;
+  margin-bottom:13px;
 }
 
 .poem-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
 }
 
 .poem-btn {
-  border: none;
-  background: transparent;
-  text-align: left;
-  padding: 10px 7px;
-  border-radius: 11px;
-  color: #4a607f;
-  font-size: 12px;
-  display: flex;
-  gap: 7px;
-  align-items: center;
+  border:none;
+  background:transparent;
+  text-align:left;
+  padding:10px 7px;
+  border-radius:11px;
+  color:#4a607f;
+  font-size:12px;
+  display:flex;
+  gap:7px;
+  align-items:center;
 }
 
 .poem-btn:hover {
-  background: #f3f7ff;
+  background:#f3f7ff;
 }
 
 .poem-btn.active {
-  background: #eaf2ff;
-  color: var(--blue);
-  font-weight: bold;
+  background:#eaf2ff;
+  color:var(--blue);
+  font-weight:bold;
 }
 
 .num {
-  width: 25px;
-  height: 25px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  background: #eff3f9;
-  display: grid;
-  place-items: center;
-  font-size: 10px;
+  width:25px;
+  height:25px;
+  flex-shrink:0;
+  border-radius:8px;
+  background:#eff3f9;
+  display:grid;
+  place-items:center;
+  font-size:10px;
 }
 
 .active .num {
-  background: var(--blue);
-  color: white;
+  background:var(--blue);
+  color:white;
 }
 
 /* APPRECIATION CARD */
 
 .app-card {
-  padding: clamp(20px, 3.5vw, 35px);
-  min-height: 500px;
+  padding:clamp(20px,3.5vw,35px);
+  min-height:500px;
 }
 
 .kicker {
-  font-size: 11px;
-  letter-spacing: 1.8px;
-  color: var(--blue);
-  font-weight: bold;
+  font-size:11px;
+  letter-spacing:1.8px;
+  color:var(--blue);
+  font-weight:bold;
 }
 
 h2 {
-  font: bold clamp(28px, 4vw, 40px) Georgia;
-  color: var(--navy);
-  margin: 10px 0 5px;
+  font:bold clamp(28px,4vw,40px) Georgia;
+  color:var(--navy);
+  margin:10px 0 5px;
 }
 
 .byline {
-  color: var(--muted);
-  margin-bottom: 24px;
+  color:var(--muted);
+  margin-bottom:24px;
 }
 
 .info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 13px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:13px;
 }
 
 .info {
-  border: 1px solid var(--line);
-  border-radius: 15px;
-  padding: 17px;
-  background: linear-gradient(145deg, white, #f8fbff);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:17px;
+  background:linear-gradient(145deg,white,#f8fbff);
 }
 
 .info.full {
-  grid-column: 1 / -1;
+  grid-column:1/-1;
 }
 
 .info-head {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: #45638e;
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 9px;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#45638e;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:9px;
 }
 
 .info-icon {
-  width: 29px;
-  height: 29px;
-  border-radius: 9px;
-  background: var(--pale);
-  display: grid;
-  place-items: center;
-  color: var(--blue);
+  width:29px;
+  height:29px;
+  border-radius:9px;
+  background:var(--pale);
+  display:grid;
+  place-items:center;
+  color:var(--blue);
 }
 
 .info p {
-  margin: 0;
-  color: #263d60;
-  font-size: 14px;
-  line-height: 1.8;
+  margin:0;
+  color:#263d60;
+  font-size:14px;
+  line-height:1.8;
 }
 
 .message {
-  background: linear-gradient(120deg, #edf4ff, #f8fbff);
-  border-color: #d6e5ff;
+  background:linear-gradient(120deg,#edf4ff,#f8fbff);
+  border-color:#d6e5ff;
 }
 
 .message .info-head {
-  color: var(--blue);
+  color:var(--blue);
 }
 
 .empty {
-  display: none;
-  text-align: center;
-  padding: 30px;
+  display:none;
+  text-align:center;
+  padding:30px;
 }
 
-/* FOOTER */
+/* WEBSITE FOOTER */
 
 footer {
-  background: #0d2e67;
-  color: white;
-  padding: 22px;
-  text-align: center;
+  background:#0d2e67;
+  color:white;
+  padding:22px;
+  text-align:center;
 }
 
 .footer-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  gap: 8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  max-width:1200px;
+  margin:auto;
+  gap:8px;
 }
 
 .footer-logo {
-  background: white;
-  color: var(--blue);
-  width: 29px;
-  height: 29px;
-  border-radius: 8px;
-  display: inline-grid;
-  place-items: center;
-  font: bold 18px Georgia;
+  background:white;
+  color:var(--blue);
+  width:29px;
+  height:29px;
+  border-radius:8px;
+  display:inline-grid;
+  place-items:center;
+  font:bold 18px Georgia;
 }
 
 .footer-brand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
 .footer-note {
-  font-size: 10px;
-  color: #a9c2e9;
-  margin-top: 2px;
+  font-size:10px;
+  color:#a9c2e9;
+  margin-top:2px;
 }
 
-/* PRINT VIEWS: HIDDEN ON WEBSITE */
+/* HIDDEN PRINT VIEWS */
 
 #printView,
 #websitePrintView {
-  display: none;
+  display:none;
 }
 
 /* MOBILE */
 
 @media(max-width:850px) {
   .layout {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .sidebar {
-    position: static;
+    position:static;
   }
 }
 
 @media(max-width:520px) {
   .poem-list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:1fr 1fr;
   }
 
   .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .info.full {
-    grid-column: auto;
+    grid-column:auto;
   }
 
   select {
-    max-width: 100%;
+    max-width:100%;
   }
 
   .intro {
-    align-items: flex-start;
-    flex-direction: column;
+    align-items:flex-start;
+    flex-direction:column;
   }
 }
 
-/* PRINT SETTINGS */
+/* ==========================================
+   A4 ROTATED TABLE PDF
+========================================== */
 
 @page tablePage {
-  size: A3 landscape;
-  margin: 7mm;
+  size:A4 portrait;
+  margin:0;
 }
-
-@page websitePage {
-  size: A4 portrait;
-  margin: 12mm;
-}
-
-/* TABLE PDF */
 
 #printView {
-  page: tablePage;
+  page:tablePage;
 }
 
+/* A4 portrait sheet */
+
+.rotated-table-page {
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  background:white;
+}
+
+/* Landscape content rotated 90 degrees */
+
+.rotated-table-content {
+  position:absolute;
+  width:283mm;
+  height:196mm;
+  left:7mm;
+  top:7mm;
+  transform-origin:top left;
+  transform:translateX(196mm) rotate(90deg);
+  overflow:hidden;
+}
+
+/* TABLE BANNER */
+
 .pdf-banner {
-  background: linear-gradient(110deg, #10377f, #155eef, #4c9cff);
-  color: white;
-  padding: 7mm 8mm;
-  margin-bottom: 5mm;
+  background:linear-gradient(110deg,#10377f,#155eef,#4c9cff);
+  color:white;
+  padding:5mm 7mm;
+  margin-bottom:4mm;
 }
 
 .pdf-brand {
-  font-size: 10px;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
 .pdf-banner h1 {
-  font: bold 25px Georgia;
-  margin: 4px 0;
-  color: white;
+  font:bold 24px Georgia;
+  margin:3px 0;
+  color:white;
 }
 
 .pdf-banner p {
-  font-size: 10px;
-  margin: 0;
-  color: #e6efff;
+  font-size:11px;
+  margin:0;
+  color:#e6efff;
 }
 
 .pdf-meta {
-  float: right;
-  font-size: 9px;
-  border: 1px solid #ffffff70;
-  border-radius: 20px;
-  padding: 5px 10px;
+  float:right;
+  font-size:10px;
+  border:1px solid #ffffff70;
+  border-radius:20px;
+  padding:4px 8px;
 }
 
+/* TABLE */
+
 .pdf-table-wrap {
-  border: 1px solid #cbdcf4;
-  overflow: hidden;
+  border:1px solid #cbdcf4;
+  overflow:hidden;
 }
 
 .pdf-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
 }
 
 .pdf-table thead th {
-  background: #e5efff;
-  color: #174a98;
-  font-size: 8.5px;
-  padding: 6px 4px;
-  border: 1px solid #c9daf3;
-  text-align: center;
-  line-height: 1.3;
-  overflow-wrap: anywhere;
+  background:#e5efff;
+  color:#174a98;
+  font-size:9px;
+  padding:6px 4px;
+  border:1px solid #c9daf3;
+  text-align:center;
+  line-height:1.3;
+  overflow-wrap:anywhere;
 }
 
 .pdf-table thead th:first-child {
-  width: 10%;
+  width:10%;
 }
 
 .pdf-table thead th:not(:first-child) {
-  width: 11.25%;
+  width:11.25%;
 }
 
 .pdf-table tbody th {
-  background: #edf4ff;
-  color: #244b83;
-  text-align: left;
-  font-size: 8px;
-  padding: 6px 5px;
-  border: 1px solid #d4e0f0;
-  overflow-wrap: anywhere;
+  background:#edf4ff;
+  color:#244b83;
+  text-align:left;
+  font-size:9px;
+  padding:6px 5px;
+  border:1px solid #d4e0f0;
+  overflow-wrap:anywhere;
 }
 
 .pdf-table tbody td {
-  font-size: 7.5px;
-  line-height: 1.3;
-  color: #293f60;
-  padding: 6px 4px;
-  vertical-align: top;
-  border: 1px solid #dce5f1;
-  overflow-wrap: anywhere;
-  word-break: normal;
+  font-size:9px;
+  line-height:1.3;
+  color:#293f60;
+  padding:6px 4px;
+  vertical-align:top;
+  border:1px solid #dce5f1;
+  overflow-wrap:anywhere;
+  word-break:normal;
 }
 
 .pdf-table tbody tr:nth-child(even) td {
-  background: #f7faff;
+  background:#f7faff;
 }
 
 .pdf-table tbody tr:first-child td {
-  font-weight: bold;
-  color: #1554b3;
-  background: #f0f6ff;
+  font-weight:bold;
+  color:#1554b3;
+  background:#f0f6ff;
 }
 
+/* TABLE FOOTER */
+
 .pdf-footer {
-  margin-top: 5mm;
-  padding: 4mm 6mm;
-  background: #0d2e67;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  font-size: 10px;
+  margin-top:4mm;
+  padding:3mm 5mm;
+  background:#0d2e67;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  font-size:10px;
 }
 
 .pdf-footer .s {
-  display: inline-grid;
-  place-items: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
-  background: white;
-  color: #155eef;
-  font: bold 15px Georgia;
-  margin-right: 7px;
+  display:inline-grid;
+  place-items:center;
+  width:21px;
+  height:21px;
+  border-radius:6px;
+  background:white;
+  color:#155eef;
+  font:bold 14px Georgia;
+  margin-right:7px;
 }
 
-/* WEBSITE-STYLE PDF */
+/* ==========================================
+   A4 WEBSITE-STYLE PDF
+========================================== */
+
+@page websitePage {
+  size:A4 portrait;
+  margin:12mm;
+}
 
 #websitePrintView {
-  page: websitePage;
+  page:websitePage;
 }
 
 .website-print-page {
-  page: websitePage;
-  min-height: 255mm;
-  display: flex;
-  flex-direction: column;
-  break-after: page;
-  page-break-after: always;
+  min-height:273mm;
+  display:flex;
+  flex-direction:column;
+  break-after:page;
+  page-break-after:always;
 }
 
 .website-print-page:last-child {
-  break-after: auto;
-  page-break-after: auto;
+  break-after:auto;
+  page-break-after:auto;
 }
 
 .website-print-banner {
-  background: linear-gradient(120deg, #10377f, #155eef, #62aaff);
-  color: white;
-  padding: 13mm 12mm;
-  border-radius: 5px;
+  background:linear-gradient(120deg,#10377f,#155eef,#62aaff);
+  color:white;
+  padding:13mm 12mm;
+  border-radius:5px;
 }
 
 .website-print-brand {
-  font-size: 10px;
-  letter-spacing: 2px;
-  font-weight: bold;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:bold;
 }
 
 .website-print-kicker {
-  margin-top: 15mm;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #d9e8ff;
-  font-weight: bold;
+  margin-top:15mm;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#d9e8ff;
+  font-weight:bold;
 }
 
 .website-print-banner h1 {
-  color: white;
-  font: bold 30px Georgia;
-  margin: 5px 0;
+  color:white;
+  font:bold 30px Georgia;
+  margin:5px 0;
 }
 
 .website-print-banner p {
-  color: #e7f0ff;
-  font-size: 11px;
-  margin: 0;
+  color:#e7f0ff;
+  font-size:11px;
+  margin:0;
 }
 
 .website-print-card {
-  margin-top: 10mm;
-  border: 1px solid #dce7f7;
-  border-radius: 9px;
-  padding: 10mm;
-  flex: 1;
+  margin-top:10mm;
+  border:1px solid #dce7f7;
+  border-radius:9px;
+  padding:10mm;
+  flex:1;
 }
 
 .website-print-card .kicker {
-  font-size: 10px;
+  font-size:10px;
 }
 
 .website-print-card h2 {
-  font-size: 27px;
-  margin: 7px 0 3px;
+  font-size:27px;
+  margin:7px 0 3px;
 }
 
 .website-print-card .byline {
-  font-size: 12px;
-  margin-bottom: 8mm;
+  font-size:12px;
+  margin-bottom:8mm;
 }
 
 .website-print-card .info-grid {
-  gap: 5mm;
+  gap:5mm;
 }
 
 .website-print-card .info {
-  padding: 6mm;
-  border-radius: 7px;
-  break-inside: avoid;
+  padding:6mm;
+  border-radius:7px;
+  break-inside:avoid;
 }
 
 .website-print-card .info-head {
-  font-size: 9px;
-  margin-bottom: 5px;
+  font-size:9px;
+  margin-bottom:5px;
 }
 
 .website-print-card .info-icon {
-  width: 23px;
-  height: 23px;
+  width:23px;
+  height:23px;
 }
 
 .website-print-card .info p {
-  font-size: 11px;
-  line-height: 1.65;
+  font-size:11px;
+  line-height:1.65;
 }
 
 .website-print-footer {
-  margin-top: auto;
-  padding: 6mm 5mm 0;
-  text-align: center;
-  color: #0d2e67;
-  border-top: 1px solid #dce7f7;
-  font-size: 10px;
+  margin-top:auto;
+  padding:6mm 5mm 0;
+  text-align:center;
+  color:#0d2e67;
+  border-top:1px solid #dce7f7;
+  font-size:10px;
 }
 
 .website-print-footer .footer-brand {
-  color: #0d2e67;
-  font-size: 11px;
+  color:#0d2e67;
+  font-size:11px;
 }
 
 .website-print-footer .footer-logo {
-  background: #155eef;
-  color: white;
-  width: 23px;
-  height: 23px;
-  font-size: 14px;
+  background:#155eef;
+  color:white;
+  width:23px;
+  height:23px;
+  font-size:14px;
 }
 
 .website-print-footer .footer-note {
-  color: #6c7f9d;
+  color:#6c7f9d;
 }
 
-/* PRINT MODE SWITCHING */
+/* ==========================================
+   PRINT VISIBILITY
+========================================== */
 
 @media print {
-  html,
-  body {
-    background: white !important;
-    color: #183153 !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+  html,body {
+    margin:0 !important;
+    padding:0 !important;
+    background:white !important;
+    -webkit-print-color-adjust:exact !important;
+    print-color-adjust:exact !important;
   }
 
   body.print-table header,
@@ -726,32 +758,38 @@ footer {
   body.print-website header,
   body.print-website main,
   body.print-website footer {
-    display: none !important;
+    display:none !important;
   }
 
   body.print-table #printView {
-    display: block !important;
+    display:block !important;
   }
 
   body.print-website #websitePrintView {
-    display: block !important;
+    display:block !important;
   }
 
   body.print-table #websitePrintView,
   body.print-website #printView {
-    display: none !important;
+    display:none !important;
   }
 
-  body.print-table .pdf-banner,
-  body.print-table .pdf-footer,
-  body.print-website .website-print-banner {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+  body.print-table .rotated-table-page {
+    width:210mm;
+    height:297mm;
+    overflow:hidden;
+    break-after:avoid;
+    page-break-after:avoid;
   }
 
-  body.print-table .pdf-table tr {
-    break-inside: avoid;
-    page-break-inside: avoid;
+  body.print-website .website-print-page {
+    break-after:page;
+    page-break-after:always;
+  }
+
+  body.print-website .website-print-page:last-child {
+    break-after:auto;
+    page-break-after:auto;
   }
 }
 </style>
@@ -782,7 +820,7 @@ footer {
 
     <div class="actions">
       <button class="btn btn-primary" onclick="exportPDF()">
-        ↓ Export PDF · Table Format
+        ↓ Export PDF · Rotated Table
       </button>
 
       <button class="btn btn-secondary" onclick="printWebsite()">
@@ -804,11 +842,8 @@ footer {
 
   <div class="toolbar">
     <div class="search">
-      <input
-        id="search"
-        type="search"
-        placeholder="Search a poem or poet..."
-      >
+      <input id="search" type="search"
+        placeholder="Search a poem or poet...">
     </div>
 
     <select id="poemSelect">
@@ -829,36 +864,46 @@ footer {
   </div>
 </main>
 
-<!-- TABLE PDF VIEW -->
+<!-- A4 ROTATED TABLE PDF -->
 
 <section id="printView">
-  <div class="pdf-banner">
-    <div class="pdf-meta">ACADEMIC YEAR 2026–27 | 08 POEMS</div>
+  <div class="rotated-table-page">
+    <div class="rotated-table-content">
 
-    <div class="pdf-brand">STUDY-HUB · LEARN • GROW • ACHIEVE</div>
+      <div class="pdf-banner">
+        <div class="pdf-meta">ACADEMIC YEAR 2026–27 | 08 POEMS</div>
 
-    <h1>English Appreciation</h1>
+        <div class="pdf-brand">
+          STUDY-HUB · LEARN • GROW • ACHIEVE
+        </div>
 
-    <p>Complete Poetry Appreciation Guide — All Poems at a Glance</p>
-  </div>
+        <h1>English Appreciation</h1>
 
-  <div class="pdf-table-wrap">
-    <table class="pdf-table">
-      <thead id="pdfHead"></thead>
-      <tbody id="pdfBody"></tbody>
-    </table>
-  </div>
+        <p>
+          Complete Poetry Appreciation Guide — All Poems at a Glance
+        </p>
+      </div>
 
-  <div class="pdf-footer">
-    <span>
-      <span class="s">S</span>
-      <strong>STUDY-HUB</strong>
-    </span>
-    <span>© 2026–27 STUDY-HUB</span>
+      <div class="pdf-table-wrap">
+        <table class="pdf-table">
+          <thead id="pdfHead"></thead>
+          <tbody id="pdfBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pdf-footer">
+        <span>
+          <span class="s">S</span>
+          <strong>STUDY-HUB</strong>
+        </span>
+        <span>© 2026–27 STUDY-HUB</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- WEBSITE-STYLE PDF VIEW -->
+<!-- A4 WEBSITE-STYLE PDF -->
 
 <section id="websitePrintView"></section>
 
@@ -871,7 +916,9 @@ footer {
       <span>STUDY-HUB</span>
     </div>
 
-    <div class="footer-note">© 2026–27 STUDY-HUB</div>
+    <div class="footer-note">
+      © 2026–27 STUDY-HUB
+    </div>
   </div>
 </footer>
 
@@ -881,80 +928,80 @@ footer {
 
 const poems = [
   {
-    title: "Song of the Open Road",
-    poet: "Walt Whitman",
-    rhyme: "Free verse",
-    figures: "Alliteration, repetition, metaphor, paradox, etc.",
-    theme: "Freedom, joy and optimism are the major themes. The poet encourages the reader to be true to themselves and live a free life.",
-    message: "The poem inspires us to explore the world using our abilities. Comfort, complaint, criticism and fate are not excuses for inaction."
+    title:"Song of the Open Road",
+    poet:"Walt Whitman",
+    rhyme:"Free verse",
+    figures:"Alliteration, repetition, metaphor, paradox, etc.",
+    theme:"Freedom, joy and optimism are the major themes. The poet encourages the reader to be true to themselves and live a free life.",
+    message:"The poem inspires us to explore the world using our abilities. Comfort, complaint, criticism and fate are not excuses for inaction."
   },
   {
-    title: "Indian Weavers",
-    poet: "Sarojini Naidu",
-    rhyme: "AABB",
-    figures: "Alliteration, metaphor, imagery, symbolism, etc.",
-    theme: "The weavers reply to questions about why they are weaving a particular piece of cloth of a certain colour at that time of day.",
-    message: "The poem is dedicated to talented Indian weavers and the fabrics for which they were famous."
+    title:"Indian Weavers",
+    poet:"Sarojini Naidu",
+    rhyme:"AABB",
+    figures:"Alliteration, metaphor, imagery, symbolism, etc.",
+    theme:"The weavers reply to questions about why they are weaving a particular piece of cloth of a certain colour at that time of day.",
+    message:"The poem is dedicated to talented Indian weavers and the fabrics for which they were famous."
   },
   {
-    title: "The Inchcape Rock",
-    poet: "Robert Southey",
-    rhyme: "AABB",
-    figures: "Alliteration, repetition, simile, metaphor, etc.",
-    theme: "The poem is about the Abbot who put the Inchcape Bell on a buoy to warn ships during storms. Rover, in a fit of madness, cut the bell to trouble the Abbot, but himself became a victim.",
-    message: "As you sow, so shall you reap."
+    title:"The Inchcape Rock",
+    poet:"Robert Southey",
+    rhyme:"AABB",
+    figures:"Alliteration, repetition, simile, metaphor, etc.",
+    theme:"The poem is about the Abbot who put the Inchcape Bell on a buoy to warn ships during storms. Rover, in a fit of madness, cut the bell to trouble the Abbot, but himself became a victim.",
+    message:"As you sow, so shall you reap."
   },
   {
-    title: "Have You Earned Your Tomorrow",
-    poet: "Edgar Guest (American poet)",
-    rhyme: "AABB",
-    figures: "Alliteration, interrogation, etc.",
-    theme: "It urges readers to be thoughtful in everyday life about the people around them. Each question makes us ask if we are kind, unselfish and patient.",
-    message: "One's life is meaningful only if it is useful for humanity at large."
+    title:"Have You Earned Your Tomorrow",
+    poet:"Edgar Guest (American poet)",
+    rhyme:"AABB",
+    figures:"Alliteration, interrogation, etc.",
+    theme:"It urges readers to be thoughtful in everyday life about the people around them. Each question makes us ask if we are kind, unselfish and patient.",
+    message:"One's life is meaningful only if it is useful for humanity at large."
   },
   {
-    title: "Father Returning Home",
-    poet: "Dilip Chitre",
-    rhyme: "Free verse",
-    figures: "Alliteration, repetition, simile, metaphor, paradox, etc.",
-    theme: "The silent and lonely journey of an old man coming home from a long day of work.",
-    message: "Old people are our treasure. We should not forget their contributions in our lives and should accompany them."
+    title:"Father Returning Home",
+    poet:"Dilip Chitre",
+    rhyme:"Free verse",
+    figures:"Alliteration, repetition, simile, metaphor, paradox, etc.",
+    theme:"The silent and lonely journey of an old man coming home from a long day of work.",
+    message:"Old people are our treasure. We should not forget their contributions in our lives and should accompany them."
   },
   {
-    title: "Money",
-    poet: "William H. Davies (Welsh poet)",
-    rhyme: "ABAB",
-    figures: "Alliteration, simile, repetition, inversion, etc.",
-    theme: "The effect of money on the behaviour of people. The poet himself experiences the life of a poor person.",
-    message: "To identify the difference between true and untrue friends. Money has no role in the happiness of life."
+    title:"Money",
+    poet:"William H. Davies (Welsh poet)",
+    rhyme:"ABAB",
+    figures:"Alliteration, simile, repetition, inversion, etc.",
+    theme:"The effect of money on the behaviour of people. The poet himself experiences the life of a poor person.",
+    message:"To identify the difference between true and untrue friends. Money has no role in the happiness of life."
   },
   {
-    title: "She Walks in Beauty",
-    poet: "George Gordon Byron",
-    rhyme: "ABABAB",
-    figures: "Simile, metaphor, alliteration, repetition, personification, etc.",
-    theme: "There are several themes. Each feature of the woman is praised. The poet speaks of harmony. The other theme is inner beauty.",
-    message: "The importance of inner beauty, which makes external beauty possible."
+    title:"She Walks in Beauty",
+    poet:"George Gordon Byron",
+    rhyme:"ABABAB",
+    figures:"Simile, metaphor, alliteration, repetition, personification, etc.",
+    theme:"There are several themes. Each feature of the woman is praised. The poet speaks of harmony. The other theme is inner beauty.",
+    message:"The importance of inner beauty, which makes external beauty possible."
   },
   {
-    title: "Small Towns and Rivers",
-    poet: "Mamang Dai",
-    rhyme: "Free verse",
-    figures: "Alliteration, repetition, simile, metaphor, personification, etc.",
-    theme: "Preservation and conservation of natural elements in the vicinity.",
-    message: "There is a need to protect and conserve the natural elements."
+    title:"Small Towns and Rivers",
+    poet:"Mamang Dai",
+    rhyme:"Free verse",
+    figures:"Alliteration, repetition, simile, metaphor, personification, etc.",
+    theme:"Preservation and conservation of natural elements in the vicinity.",
+    message:"There is a need to protect and conserve the natural elements."
   }
 ];
 
 /* APPRECIATION FIELDS */
 
 const fields = [
-  ["Poem", "title"],
-  ["Poet", "poet"],
-  ["Rhyme scheme", "rhyme"],
-  ["Figures of speech", "figures"],
-  ["Theme", "theme"],
-  ["Message", "message"]
+  ["Poem","title"],
+  ["Poet","poet"],
+  ["Rhyme scheme","rhyme"],
+  ["Figures of speech","figures"],
+  ["Theme","theme"],
+  ["Message","message"]
 ];
 
 let current = 0;
@@ -970,28 +1017,27 @@ function renderList() {
   const chosen = select.value;
 
   const shown = poems
-    .map((p, i) => ({p, i}))
-    .filter(({p, i}) =>
+    .map((p,i) => ({p,i}))
+    .filter(({p,i}) =>
       (chosen === "all" || Number(chosen) === i) &&
       (p.title + " " + p.poet).toLowerCase().includes(query)
     );
 
   list.innerHTML = "";
 
-  shown.forEach(({p, i}) => {
+  shown.forEach(({p,i}) => {
     const button = document.createElement("button");
-
     button.className =
       "poem-btn" + (i === current ? " active" : "");
 
     const number = document.createElement("span");
     number.className = "num";
-    number.textContent = String(i + 1).padStart(2, "0");
+    number.textContent = String(i+1).padStart(2,"0");
 
     const title = document.createElement("span");
     title.textContent = p.title;
 
-    button.append(number, title);
+    button.append(number,title);
     button.onclick = () => showPoem(i);
 
     list.appendChild(button);
@@ -1004,20 +1050,19 @@ function renderList() {
     shown.length ? "block" : "none";
 
   if (shown.length && !shown.some(x => x.i === current)) {
-    showPoem(shown[0].i, false);
+    showPoem(shown[0].i,false);
   }
 }
 
-/* DISPLAY INDIVIDUAL POEM CARD */
+/* DISPLAY INDIVIDUAL POEM */
 
-function showPoem(i, refresh = true) {
+function showPoem(i,refresh=true) {
   current = i;
-
   const p = poems[i];
 
   document.getElementById("appreciation").innerHTML = `
     <div class="kicker">
-      POEM ${String(i + 1).padStart(2, "0")} / 08 · APPRECIATION
+      POEM ${String(i+1).padStart(2,"0")} / 08 · APPRECIATION
     </div>
 
     <h2>${p.title}</h2>
@@ -1069,12 +1114,10 @@ function showPoem(i, refresh = true) {
     </div>
   `;
 
-  if (refresh) {
-    renderList();
-  }
+  if (refresh) renderList();
 }
 
-/* BUILD ONE-PAGE TABLE PDF */
+/* BUILD ROTATED EIGHT-COLUMN TABLE */
 
 function buildPDFTable() {
   const head = document.getElementById("pdfHead");
@@ -1083,25 +1126,21 @@ function buildPDFTable() {
   head.innerHTML = "";
   body.innerHTML = "";
 
-  /* HEADER: APPRECIATION + EIGHT POEMS */
-
   const headerRow = document.createElement("tr");
 
   const first = document.createElement("th");
   first.textContent = "APPRECIATION";
   headerRow.appendChild(first);
 
-  poems.forEach((p, i) => {
+  poems.forEach((p,i) => {
     const th = document.createElement("th");
-    th.textContent = `POEM ${i + 1}\n${p.title}`;
+    th.textContent = `POEM ${i+1}\n${p.title}`;
     headerRow.appendChild(th);
   });
 
   head.appendChild(headerRow);
 
-  /* ROWS: POEM, POET, RHYME, FIGURES, THEME, MESSAGE */
-
-  fields.forEach(([label, key]) => {
+  fields.forEach(([label,key]) => {
     const tr = document.createElement("tr");
 
     const th = document.createElement("th");
@@ -1118,21 +1157,26 @@ function buildPDFTable() {
   });
 }
 
-/* BUILD EIGHT WEBSITE-STYLE PRINT PAGES */
+/* BUILD WEBSITE-STYLE PRINT PAGES */
 
 function buildWebsitePrint() {
   const view = document.getElementById("websitePrintView");
   view.innerHTML = "";
 
-  poems.forEach((p, i) => {
+  poems.forEach((p,i) => {
     const page = document.createElement("section");
     page.className = "website-print-page";
 
     const banner = document.createElement("div");
     banner.className = "website-print-banner";
+
     banner.innerHTML = `
-      <div class="website-print-brand">STUDY-HUB · LEARN • GROW • ACHIEVE</div>
-      <div class="website-print-kicker">ENGLISH POETRY APPRECIATION</div>
+      <div class="website-print-brand">
+        STUDY-HUB · LEARN • GROW • ACHIEVE
+      </div>
+      <div class="website-print-kicker">
+        ENGLISH POETRY APPRECIATION
+      </div>
       <h1>English Appreciation</h1>
       <p>Complete Poetry Appreciation Guide</p>
     `;
@@ -1143,7 +1187,7 @@ function buildWebsitePrint() {
     const kicker = document.createElement("div");
     kicker.className = "kicker";
     kicker.textContent =
-      `POEM ${String(i + 1).padStart(2, "0")} / 08 · APPRECIATION`;
+      `POEM ${String(i+1).padStart(2,"0")} / 08 · APPRECIATION`;
 
     const title = document.createElement("h2");
     title.textContent = p.title;
@@ -1156,15 +1200,16 @@ function buildWebsitePrint() {
     grid.className = "info-grid";
 
     const cardFields = [
-      ["✍", "POET", p.poet, false],
-      ["♫", "RHYME SCHEME", p.rhyme, false],
-      ["✧", "FIGURES OF SPEECH", p.figures, true],
-      ["◇", "THEME", p.theme, true],
-      ["✦", "MESSAGE", p.message, true]
+      ["✍","POET",p.poet,false],
+      ["♫","RHYME SCHEME",p.rhyme,false],
+      ["✧","FIGURES OF SPEECH",p.figures,true],
+      ["◇","THEME",p.theme,true],
+      ["✦","MESSAGE",p.message,true]
     ];
 
-    cardFields.forEach(([symbol, label, value, full]) => {
+    cardFields.forEach(([symbol,label,value,full]) => {
       const article = document.createElement("article");
+
       article.className = "info" +
         (full ? " full" : "") +
         (label === "MESSAGE" ? " message" : "");
@@ -1176,33 +1221,36 @@ function buildWebsitePrint() {
       icon.className = "info-icon";
       icon.textContent = symbol;
 
-      heading.append(icon, document.createTextNode(label));
+      heading.append(icon,document.createTextNode(label));
 
       const paragraph = document.createElement("p");
       paragraph.textContent = value;
 
-      article.append(heading, paragraph);
+      article.append(heading,paragraph);
       grid.appendChild(article);
     });
 
-    card.append(kicker, title, byline, grid);
+    card.append(kicker,title,byline,grid);
 
     const footer = document.createElement("div");
     footer.className = "website-print-footer";
+
     footer.innerHTML = `
       <div class="footer-brand">
         <span class="footer-logo">S</span>
         <span>STUDY-HUB</span>
       </div>
-      <div class="footer-note">© 2026–27 STUDY-HUB</div>
+      <div class="footer-note">
+        © 2026–27 STUDY-HUB
+      </div>
     `;
 
-    page.append(banner, card, footer);
+    page.append(banner,card,footer);
     view.appendChild(page);
   });
 }
 
-/* PRINT TABLE FORMAT */
+/* PRINT TABLE PDF */
 
 function exportPDF() {
   buildPDFTable();
@@ -1213,7 +1261,7 @@ function exportPDF() {
   window.print();
 }
 
-/* PRINT WEBSITE FORMAT */
+/* PRINT WEBSITE PDF */
 
 function printWebsite() {
   buildWebsitePrint();
@@ -1227,22 +1275,25 @@ function printWebsite() {
 /* RESTORE WEBSITE AFTER PRINTING */
 
 function resetPrintMode() {
-  document.body.classList.remove("print-table", "print-website");
+  document.body.classList.remove(
+    "print-table",
+    "print-website"
+  );
 }
 
-window.addEventListener("afterprint", resetPrintMode);
+window.addEventListener("afterprint",resetPrintMode);
 
-/* INITIALISE WEBSITE */
+/* INITIALISE */
 
-poems.forEach((p, i) => {
+poems.forEach((p,i) => {
   const option = document.createElement("option");
   option.value = i;
-  option.textContent = `Poem ${i + 1} · ${p.title}`;
+  option.textContent = `Poem ${i+1} · ${p.title}`;
   select.appendChild(option);
 });
 
-search.addEventListener("input", renderList);
-select.addEventListener("change", renderList);
+search.addEventListener("input",renderList);
+select.addEventListener("change",renderList);
 
 renderList();
 showPoem(0);
