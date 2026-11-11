@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#155eef">
 <title>STUDY-HUB | English Appreciation</title>
 
 <style>
@@ -130,7 +129,7 @@ h1 {
   border:1px solid #ffffff70;
 }
 
-/* MAIN */
+/* MAIN WEBSITE */
 
 main {
   max-width:1200px;
@@ -350,10 +349,6 @@ h2 {
   border-color:#d6e5ff;
 }
 
-.message .info-head {
-  color:var(--blue);
-}
-
 .empty {
   display:none;
   text-align:center;
@@ -374,8 +369,6 @@ footer {
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  max-width:1200px;
-  margin:auto;
   gap:8px;
 }
 
@@ -402,17 +395,343 @@ footer {
 .footer-note {
   font-size:10px;
   color:#a9c2e9;
-  margin-top:2px;
+  margin:0;
 }
 
-/* HIDDEN PRINT VIEWS */
+/* ===================================
+   A4 ROTATED TABLE PDF
+=================================== */
 
-#printView,
+@page tablePage {
+  size:A4 portrait;
+  margin:0;
+}
+
+#printView {
+  display:none;
+  page:tablePage;
+}
+
+.rotated-table-page {
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  background:white;
+}
+
+/*
+  Table canvas is 283mm x 196mm.
+  After rotation it fits inside A4 portrait.
+*/
+
+.rotated-table-content {
+  position:absolute;
+  width:283mm;
+  height:196mm;
+  left:7mm;
+  top:7mm;
+  padding:2mm;
+  transform-origin:top left;
+  transform:translateX(196mm) rotate(90deg);
+  overflow:hidden;
+}
+
+/* TABLE PDF BANNER */
+
+.pdf-banner {
+  background:linear-gradient(110deg,#10377f,#155eef,#4c9cff);
+  color:white;
+  padding:3mm 5mm;
+  margin-bottom:3mm;
+  min-height:21mm;
+}
+
+.pdf-brand {
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.pdf-banner h1 {
+  font:bold 20px Georgia;
+  margin:2px 0;
+  color:white;
+}
+
+.pdf-banner p {
+  font-size:9px;
+  margin:0;
+  color:#e6efff;
+}
+
+.pdf-meta {
+  float:right;
+  font-size:9px;
+  border:1px solid #ffffff70;
+  border-radius:20px;
+  padding:3px 7px;
+}
+
+/* TABLE */
+
+.pdf-table-wrap {
+  border:1px solid #9bb7df;
+  overflow:hidden;
+}
+
+.pdf-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+
+.pdf-table thead th {
+  background:#e5efff;
+  color:#174a98;
+  font-size:9px;
+  font-weight:bold;
+  padding:4px 3px;
+  border:1px solid #9bb7df;
+  text-align:center;
+  line-height:1.2;
+  overflow-wrap:anywhere;
+}
+
+.pdf-table thead th:first-child {
+  width:10%;
+}
+
+.pdf-table thead th:not(:first-child) {
+  width:11.25%;
+}
+
+.pdf-table tbody th {
+  background:#edf4ff;
+  color:#244b83;
+  text-align:left;
+  font-size:9px;
+  line-height:1.2;
+  padding:4px 3px;
+  border:1px solid #9bb7df;
+  overflow-wrap:anywhere;
+}
+
+.pdf-table tbody td {
+  font-size:8.5px;
+  line-height:1.25;
+  color:#172e50;
+  padding:4px 3px;
+  vertical-align:top;
+  border:1px solid #b8c9df;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+.pdf-table tbody tr:nth-child(even) td {
+  background:#f7faff;
+}
+
+.pdf-table tbody tr:first-child td {
+  font-weight:bold;
+  color:#1554b3;
+  background:#f0f6ff;
+}
+
+/* CENTERED FOOTER FOR TABLE PDF */
+
+.pdf-footer {
+  margin-top:3mm;
+  padding:2mm;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2px;
+  text-align:center;
+  color:#0d2e67;
+  font-size:9px;
+}
+
+.pdf-footer .footer-brand {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  font-weight:bold;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#0d2e67;
+}
+
+.pdf-footer .s {
+  width:22px;
+  height:22px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:6px;
+  background:#155eef;
+  color:white;
+  font:bold 15px Georgia;
+}
+
+.pdf-footer .footer-note {
+  color:#526b91;
+  font-size:9px;
+  margin:0;
+}
+
+/* ===================================
+   A4 WEBSITE-STYLE PDF
+=================================== */
+
+@page websitePage {
+  size:A4 portrait;
+  margin:12mm;
+}
+
 #websitePrintView {
   display:none;
+  page:websitePage;
 }
 
-/* MOBILE */
+.website-print-page {
+  min-height:273mm;
+  display:flex;
+  flex-direction:column;
+  break-after:page;
+  page-break-after:always;
+}
+
+.website-print-page:last-child {
+  break-after:auto;
+  page-break-after:auto;
+}
+
+.website-print-banner {
+  background:linear-gradient(120deg,#10377f,#155eef,#62aaff);
+  color:white;
+  padding:12mm;
+  border-radius:5px;
+}
+
+.website-print-brand {
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.website-print-kicker {
+  margin-top:12mm;
+  font-size:10px;
+  letter-spacing:2px;
+  color:#d9e8ff;
+  font-weight:bold;
+}
+
+.website-print-banner h1 {
+  color:white;
+  font:bold 30px Georgia;
+  margin:5px 0;
+}
+
+.website-print-banner p {
+  color:#e7f0ff;
+  font-size:11px;
+  margin:0;
+}
+
+.website-print-card {
+  margin-top:9mm;
+  border:1px solid #dce7f7;
+  border-radius:9px;
+  padding:9mm;
+  flex:1;
+}
+
+.website-print-card .kicker {
+  font-size:10px;
+}
+
+.website-print-card h2 {
+  font-size:27px;
+  margin:7px 0 3px;
+}
+
+.website-print-card .byline {
+  font-size:12px;
+  margin-bottom:7mm;
+}
+
+.website-print-card .info-grid {
+  gap:5mm;
+}
+
+.website-print-card .info {
+  padding:6mm;
+  border-radius:7px;
+  break-inside:avoid;
+}
+
+.website-print-card .info-head {
+  font-size:9px;
+  margin-bottom:5px;
+}
+
+.website-print-card .info-icon {
+  width:23px;
+  height:23px;
+}
+
+.website-print-card .info p {
+  font-size:12px;
+  line-height:1.65;
+}
+
+/* CENTERED FOOTER FOR WEBSITE PDF */
+
+.website-print-footer {
+  margin-top:auto;
+  padding:5mm 3mm 0;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:4px;
+  color:#0d2e67;
+  font-size:10px;
+}
+
+.website-print-footer .footer-brand {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:#0d2e67;
+}
+
+.website-print-footer .footer-logo {
+  width:27px;
+  height:27px;
+  border-radius:7px;
+  background:#155eef;
+  color:white;
+  display:inline-grid;
+  place-items:center;
+  font:bold 17px Georgia;
+}
+
+.website-print-footer .footer-note {
+  color:#526b91;
+  font-size:10px;
+  margin:0;
+}
+
+/* RESPONSIVE */
 
 @media(max-width:850px) {
   .layout {
@@ -447,301 +766,7 @@ footer {
   }
 }
 
-/* ==========================================
-   A4 ROTATED TABLE PDF
-========================================== */
-
-@page tablePage {
-  size:A4 portrait;
-  margin:0;
-}
-
-#printView {
-  page:tablePage;
-}
-
-/* A4 portrait sheet */
-
-.rotated-table-page {
-  position:relative;
-  width:210mm;
-  height:297mm;
-  overflow:hidden;
-  background:white;
-}
-
-/* Landscape content rotated 90 degrees */
-
-.rotated-table-content {
-  position:absolute;
-  width:283mm;
-  height:196mm;
-  left:7mm;
-  top:7mm;
-  transform-origin:top left;
-  transform:translateX(196mm) rotate(90deg);
-  overflow:hidden;
-}
-
-/* TABLE BANNER */
-
-.pdf-banner {
-  background:linear-gradient(110deg,#10377f,#155eef,#4c9cff);
-  color:white;
-  padding:5mm 7mm;
-  margin-bottom:4mm;
-}
-
-.pdf-brand {
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.pdf-banner h1 {
-  font:bold 24px Georgia;
-  margin:3px 0;
-  color:white;
-}
-
-.pdf-banner p {
-  font-size:11px;
-  margin:0;
-  color:#e6efff;
-}
-
-.pdf-meta {
-  float:right;
-  font-size:10px;
-  border:1px solid #ffffff70;
-  border-radius:20px;
-  padding:4px 8px;
-}
-
-/* TABLE */
-
-.pdf-table-wrap {
-  border:1px solid #cbdcf4;
-  overflow:hidden;
-}
-
-.pdf-table {
-  width:100%;
-  border-collapse:collapse;
-  table-layout:fixed;
-}
-
-.pdf-table thead th {
-  background:#e5efff;
-  color:#174a98;
-  font-size:9px;
-  padding:6px 4px;
-  border:1px solid #c9daf3;
-  text-align:center;
-  line-height:1.3;
-  overflow-wrap:anywhere;
-}
-
-.pdf-table thead th:first-child {
-  width:10%;
-}
-
-.pdf-table thead th:not(:first-child) {
-  width:11.25%;
-}
-
-.pdf-table tbody th {
-  background:#edf4ff;
-  color:#244b83;
-  text-align:left;
-  font-size:9px;
-  padding:6px 5px;
-  border:1px solid #d4e0f0;
-  overflow-wrap:anywhere;
-}
-
-.pdf-table tbody td {
-  font-size:9px;
-  line-height:1.3;
-  color:#293f60;
-  padding:6px 4px;
-  vertical-align:top;
-  border:1px solid #dce5f1;
-  overflow-wrap:anywhere;
-  word-break:normal;
-}
-
-.pdf-table tbody tr:nth-child(even) td {
-  background:#f7faff;
-}
-
-.pdf-table tbody tr:first-child td {
-  font-weight:bold;
-  color:#1554b3;
-  background:#f0f6ff;
-}
-
-/* TABLE FOOTER */
-
-.pdf-footer {
-  margin-top:4mm;
-  padding:3mm 5mm;
-  background:#0d2e67;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  font-size:10px;
-}
-
-.pdf-footer .s {
-  display:inline-grid;
-  place-items:center;
-  width:21px;
-  height:21px;
-  border-radius:6px;
-  background:white;
-  color:#155eef;
-  font:bold 14px Georgia;
-  margin-right:7px;
-}
-
-/* ==========================================
-   A4 WEBSITE-STYLE PDF
-========================================== */
-
-@page websitePage {
-  size:A4 portrait;
-  margin:12mm;
-}
-
-#websitePrintView {
-  page:websitePage;
-}
-
-.website-print-page {
-  min-height:273mm;
-  display:flex;
-  flex-direction:column;
-  break-after:page;
-  page-break-after:always;
-}
-
-.website-print-page:last-child {
-  break-after:auto;
-  page-break-after:auto;
-}
-
-.website-print-banner {
-  background:linear-gradient(120deg,#10377f,#155eef,#62aaff);
-  color:white;
-  padding:13mm 12mm;
-  border-radius:5px;
-}
-
-.website-print-brand {
-  font-size:10px;
-  letter-spacing:2px;
-  font-weight:bold;
-}
-
-.website-print-kicker {
-  margin-top:15mm;
-  font-size:10px;
-  letter-spacing:2px;
-  color:#d9e8ff;
-  font-weight:bold;
-}
-
-.website-print-banner h1 {
-  color:white;
-  font:bold 30px Georgia;
-  margin:5px 0;
-}
-
-.website-print-banner p {
-  color:#e7f0ff;
-  font-size:11px;
-  margin:0;
-}
-
-.website-print-card {
-  margin-top:10mm;
-  border:1px solid #dce7f7;
-  border-radius:9px;
-  padding:10mm;
-  flex:1;
-}
-
-.website-print-card .kicker {
-  font-size:10px;
-}
-
-.website-print-card h2 {
-  font-size:27px;
-  margin:7px 0 3px;
-}
-
-.website-print-card .byline {
-  font-size:12px;
-  margin-bottom:8mm;
-}
-
-.website-print-card .info-grid {
-  gap:5mm;
-}
-
-.website-print-card .info {
-  padding:6mm;
-  border-radius:7px;
-  break-inside:avoid;
-}
-
-.website-print-card .info-head {
-  font-size:9px;
-  margin-bottom:5px;
-}
-
-.website-print-card .info-icon {
-  width:23px;
-  height:23px;
-}
-
-.website-print-card .info p {
-  font-size:11px;
-  line-height:1.65;
-}
-
-.website-print-footer {
-  margin-top:auto;
-  padding:6mm 5mm 0;
-  text-align:center;
-  color:#0d2e67;
-  border-top:1px solid #dce7f7;
-  font-size:10px;
-}
-
-.website-print-footer .footer-brand {
-  color:#0d2e67;
-  font-size:11px;
-}
-
-.website-print-footer .footer-logo {
-  background:#155eef;
-  color:white;
-  width:23px;
-  height:23px;
-  font-size:14px;
-}
-
-.website-print-footer .footer-note {
-  color:#6c7f9d;
-}
-
-/* ==========================================
-   PRINT VISIBILITY
-========================================== */
+/* PRINT VISIBILITY */
 
 @media print {
   html,body {
@@ -803,15 +828,12 @@ footer {
       <div class="logo">S</div>
       <div class="brand-name">STUDY-HUB</div>
     </div>
-
     <span>ENGLISH •<br>POETRY APPRECIATION</span>
   </div>
 
   <div class="hero">
     <div class="eyebrow">YOUR SMART STUDY COMPANION</div>
-
     <h1>English Appreciation</h1>
-
     <p>
       Explore the beauty of poetry through its poet,
       rhyme scheme, figures of speech, theme and message.
@@ -820,7 +842,7 @@ footer {
 
     <div class="actions">
       <button class="btn btn-primary" onclick="exportPDF()">
-        ↓ Export PDF · Rotated Table
+        ↓ Export PDF · Table Format
       </button>
 
       <button class="btn btn-secondary" onclick="printWebsite()">
@@ -836,7 +858,6 @@ footer {
       <strong>Poem Collection</strong>
       <p>Select a poem to view its complete appreciation.</p>
     </div>
-
     <span class="count">08 POEMS</span>
   </section>
 
@@ -864,7 +885,7 @@ footer {
   </div>
 </main>
 
-<!-- A4 ROTATED TABLE PDF -->
+<!-- ROTATED TABLE PDF -->
 
 <section id="printView">
   <div class="rotated-table-page">
@@ -872,16 +893,9 @@ footer {
 
       <div class="pdf-banner">
         <div class="pdf-meta">ACADEMIC YEAR 2026–27 | 08 POEMS</div>
-
-        <div class="pdf-brand">
-          STUDY-HUB · LEARN • GROW • ACHIEVE
-        </div>
-
+        <div class="pdf-brand">STUDY-HUB · LEARN • GROW • ACHIEVE</div>
         <h1>English Appreciation</h1>
-
-        <p>
-          Complete Poetry Appreciation Guide — All Poems at a Glance
-        </p>
+        <p>Complete Poetry Appreciation Guide — All Poems at a Glance</p>
       </div>
 
       <div class="pdf-table-wrap">
@@ -892,18 +906,19 @@ footer {
       </div>
 
       <div class="pdf-footer">
-        <span>
+        <div class="footer-brand">
           <span class="s">S</span>
-          <strong>STUDY-HUB</strong>
-        </span>
-        <span>© 2026–27 STUDY-HUB</span>
+          <span>STUDY-HUB</span>
+        </div>
+        <div class="footer-note">© 2026–27 STUDY-HUB</div>
+        <div class="footer-note">English Appreciation</div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- A4 WEBSITE-STYLE PDF -->
+<!-- WEBSITE FORMAT PDF -->
 
 <section id="websitePrintView"></section>
 
@@ -915,10 +930,8 @@ footer {
       <span class="footer-logo">S</span>
       <span>STUDY-HUB</span>
     </div>
-
-    <div class="footer-note">
-      © 2026–27 STUDY-HUB
-    </div>
+    <div class="footer-note">© 2026–27 STUDY-HUB</div>
+    <div class="footer-note">English Appreciation</div>
   </div>
 </footer>
 
@@ -993,8 +1006,6 @@ const poems = [
   }
 ];
 
-/* APPRECIATION FIELDS */
-
 const fields = [
   ["Poem","title"],
   ["Poet","poet"],
@@ -1054,7 +1065,7 @@ function renderList() {
   }
 }
 
-/* DISPLAY INDIVIDUAL POEM */
+/* DISPLAY POEM */
 
 function showPoem(i,refresh=true) {
   current = i;
@@ -1117,7 +1128,7 @@ function showPoem(i,refresh=true) {
   if (refresh) renderList();
 }
 
-/* BUILD ROTATED EIGHT-COLUMN TABLE */
+/* BUILD THE COMPLETE EIGHT-POEM TABLE */
 
 function buildPDFTable() {
   const head = document.getElementById("pdfHead");
@@ -1157,7 +1168,7 @@ function buildPDFTable() {
   });
 }
 
-/* BUILD WEBSITE-STYLE PRINT PAGES */
+/* BUILD EIGHT WEBSITE-STYLE PRINT PAGES */
 
 function buildWebsitePrint() {
   const view = document.getElementById("websitePrintView");
@@ -1240,9 +1251,8 @@ function buildWebsitePrint() {
         <span class="footer-logo">S</span>
         <span>STUDY-HUB</span>
       </div>
-      <div class="footer-note">
-        © 2026–27 STUDY-HUB
-      </div>
+      <div class="footer-note">© 2026–27 STUDY-HUB</div>
+      <div class="footer-note">English Appreciation</div>
     `;
 
     page.append(banner,card,footer);
@@ -1272,7 +1282,7 @@ function printWebsite() {
   window.print();
 }
 
-/* RESTORE WEBSITE AFTER PRINTING */
+/* RESTORE WEBSITE AFTER PRINT */
 
 function resetPrintMode() {
   document.body.classList.remove(
@@ -1283,7 +1293,7 @@ function resetPrintMode() {
 
 window.addEventListener("afterprint",resetPrintMode);
 
-/* INITIALISE */
+/* INITIALISE WEBSITE */
 
 poems.forEach((p,i) => {
   const option = document.createElement("option");
