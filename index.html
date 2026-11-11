@@ -1,0 +1,1099 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#155eef">
+<title>STUDY-HUB | English Appreciation</title>
+
+<style>
+:root {
+  --blue: #155eef;
+  --navy: #102d60;
+  --pale: #edf4ff;
+  --ink: #1d3557;
+  --muted: #6c7f9d;
+  --line: #dce7f7;
+  --bg: #f5f8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+  background: linear-gradient(
+    120deg,
+    #10377f,
+    #155eef,
+    #62aaff
+  );
+  color: white;
+  padding: 22px 6% 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+header::after {
+  content: "S";
+  position: absolute;
+  right: 7%;
+  top: -100px;
+  font: 900 280px Georgia;
+  color: #ffffff12;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  background: white;
+  color: var(--blue);
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  font: bold 28px Georgia;
+}
+
+.brand-name {
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.brand-tag {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #d9e8ff;
+}
+
+.hero {
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #d9e8ff;
+  font-weight: bold;
+}
+
+h1 {
+  font: bold clamp(35px, 5vw, 58px) Georgia;
+  margin: 12px 0;
+}
+
+.hero p {
+  max-width: 650px;
+  color: #e7f0ff;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 11px;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--blue);
+}
+
+.btn-secondary {
+  background: #ffffff20;
+  color: white;
+  border: 1px solid #ffffff70;
+}
+
+/* MAIN */
+
+main {
+  max-width: 1200px;
+  margin: 28px auto 45px;
+  padding: 0 22px;
+}
+
+.intro {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 17px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.intro strong {
+  font: bold 19px Georgia;
+  color: var(--navy);
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 3px 0 0;
+}
+
+.count {
+  background: var(--pale);
+  color: var(--blue);
+  padding: 7px 12px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* SEARCH */
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search {
+  flex: 1;
+  min-width: 220px;
+}
+
+.search input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: white;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+select {
+  max-width: 250px;
+}
+
+/* WEBSITE LAYOUT */
+
+.layout {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.sidebar,
+.app-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  box-shadow: 0 14px 38px #1c4d9110;
+}
+
+.sidebar {
+  padding: 18px;
+  position: sticky;
+  top: 12px;
+}
+
+.side-title {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  font-weight: bold;
+  margin-bottom: 13px;
+}
+
+.poem-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.poem-btn {
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 10px 7px;
+  border-radius: 11px;
+  cursor: pointer;
+  color: #4a607f;
+  font-size: 12px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.poem-btn:hover {
+  background: #f3f7ff;
+}
+
+.poem-btn.active {
+  background: #eaf2ff;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.num {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #eff3f9;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+}
+
+.active .num {
+  background: var(--blue);
+  color: white;
+}
+
+/* APPRECIATION CARDS */
+
+.app-card {
+  padding: clamp(20px, 3.5vw, 35px);
+  min-height: 500px;
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+h2 {
+  font: bold clamp(28px, 4vw, 40px) Georgia;
+  color: var(--navy);
+  margin: 10px 0 5px;
+}
+
+.byline {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.info {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 17px;
+  background: linear-gradient(145deg, white, #f8fbff);
+}
+
+.info.full {
+  grid-column: 1 / -1;
+}
+
+.info-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #45638e;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.info-icon {
+  width: 29px;
+  height: 29px;
+  border-radius: 9px;
+  background: var(--pale);
+  display: grid;
+  place-items: center;
+  color: var(--blue);
+}
+
+.info p {
+  margin: 0;
+  color: #263d60;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.message {
+  background: linear-gradient(120deg, #edf4ff, #f8fbff);
+  border-color: #d6e5ff;
+}
+
+.message .info-head {
+  color: var(--blue);
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 30px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0d2e67;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 8px;
+}
+
+.footer-logo {
+  background: white;
+  color: var(--blue);
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  display: inline-grid;
+  place-items: center;
+  font: bold 18px Georgia;
+}
+
+.footer-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.footer-note {
+  font-size: 10px;
+  color: #a9c2e9;
+  margin-top: 2px;
+}
+
+/* PDF ONLY VIEW */
+
+#printView {
+  display: none;
+}
+
+/* MOBILE */
+
+@media(max-width:850px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}
+
+@media(max-width:520px) {
+  .poem-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info.full {
+    grid-column: auto;
+  }
+
+  select {
+    max-width: 100%;
+  }
+
+  .intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* PDF DESIGN - DIFFERENT FROM WEBSITE */
+
+@media print {
+
+  @page {
+    size: A3 landscape;
+    margin: 9mm;
+  }
+
+  html, body {
+    background: white !important;
+    color: #183153 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header, main, footer {
+    display: none !important;
+  }
+
+  #printView {
+    display: block !important;
+  }
+
+  .pdf-banner {
+    background: linear-gradient(
+      110deg,
+      #10377f,
+      #155eef,
+      #4c9cff
+    ) !important;
+    color: white !important;
+    padding: 8mm 9mm;
+    margin-bottom: 6mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .pdf-brand {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+  .pdf-banner h1 {
+    font: bold 27px Georgia;
+    margin: 5px 0;
+    color: white;
+  }
+
+  .pdf-banner p {
+    font-size: 10px;
+    margin: 0;
+    color: #e6efff;
+  }
+
+  .pdf-meta {
+    float: right;
+    font-size: 9px;
+    border: 1px solid #ffffff70;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+
+  .pdf-table-wrap {
+    border: 1px solid #cbdcf4;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  thead th {
+    background: #e5efff !important;
+    color: #174a98;
+    font-size: 8px;
+    padding: 9px 6px;
+    border: 1px solid #c9daf3;
+    text-align: center;
+  }
+
+  thead th:first-child {
+    width: 10%;
+  }
+
+  tbody th {
+    background: #edf4ff !important;
+    color: #244b83;
+    text-align: left;
+    font-size: 8px;
+    padding: 9px 6px;
+    border: 1px solid #d4e0f0;
+  }
+
+  tbody td {
+    font-size: 7.5px;
+    line-height: 1.4;
+    color: #293f60;
+    padding: 9px 6px;
+    vertical-align: top;
+    border: 1px solid #dce5f1;
+    overflow-wrap: anywhere;
+  }
+
+  tbody tr:nth-child(even) td {
+    background: #f7faff !important;
+  }
+
+  tbody tr:first-child td {
+    font-weight: bold;
+    color: #1554b3;
+    background: #f0f6ff !important;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+
+  .pdf-footer {
+    margin-top: 6mm;
+    padding: 5mm 7mm;
+    background: #0d2e67 !important;
+    color: white !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+  }
+
+  .pdf-footer .s {
+    display: inline-grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: white;
+    color: #155eef;
+    font: bold 15px Georgia;
+    margin-right: 7px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div class="brand-name">STUDY-HUB</div>
+        
+      </div>
+    </div>
+
+    <span> ENGLISH •</br> POETRY APPRECIATION</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">YOUR SMART STUDY COMPANION</div>
+
+    <h1>English Appreciation</h1>
+
+    <p>
+      Explore the beauty of poetry through its poet,
+      rhyme scheme, figures of speech, theme and message.
+      All eight poems in one place.
+    </p>
+
+    <div class="actions">
+      <button class="btn btn-primary" onclick="exportPDF()">
+        ↓ Export PDF · Table Format
+      </button>
+
+      <button class="btn btn-secondary" onclick="window.print()">
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+</header>
+
+<main>
+
+  <section class="intro">
+    <div>
+      <strong>Poem Collection</strong>
+      <p>Select a poem to view its complete appreciation.</p>
+    </div>
+
+    <span class="count">08 POEMS</span>
+  </section>
+
+  <div class="toolbar">
+
+    <div class="search">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search a poem or poet..."
+      >
+    </div>
+
+    <select id="poemSelect">
+      <option value="all">All poems</option>
+    </select>
+
+  </div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+
+      <div class="side-title">
+        POEM COLLECTION · 08
+      </div>
+
+      <nav class="poem-list" id="poemList"></nav>
+
+    </aside>
+
+    <section class="app-card">
+
+      <div id="appreciation"></div>
+
+      <div class="empty" id="empty">
+        No matching poem found.
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+<!-- SEPARATE PDF DESIGN -->
+
+<section id="printView">
+
+  <div class="pdf-banner">
+
+    <div class="pdf-brand">
+      STUDY-HUB · LEARN • GROW • ACHIEVE
+    </div>
+
+    <div class="pdf-meta">
+      ACADEMIC YEAR 2026–27 | 08 POEMS
+    </div>
+
+    <h1>English Appreciation</h1>
+
+    <p>
+      Complete Poetry Appreciation Guide
+      — All Poems at a Glance
+    </p>
+
+  </div>
+
+  <div class="pdf-table-wrap">
+
+    <table>
+
+      <thead id="pdfHead"></thead>
+
+      <tbody id="pdfBody"></tbody>
+
+    </table>
+
+  </div>
+
+  <div class="pdf-footer">
+
+    <span>
+      <span class="s">S</span>
+      STUDY-HUB
+    </span>
+
+    <span>© 2026–27 STUDY-HUB,</span>
+
+  </div>
+
+</section>
+
+<!-- CENTERED FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <span class="footer-logo">S</span>
+      <span>STUDY-HUB</span>
+    </div>
+
+    <div class="footer-note">
+      © 2026–27 STUDY-HUB,
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+/* POEM DATA */
+
+const poems = [
+
+{
+title: "Song of the Open Road",
+poet: "Walt Whitman",
+rhyme: "Free verse",
+figures: "Alliteration, repetition, metaphor, paradox, etc.",
+theme: "Freedom, joy and optimism are the major themes. The poet encourages the reader to be true to themselves and live a free life.",
+message: "The poem inspires us to explore the world using our abilities. Comfort, complaint, criticism and fate are not excuses for inaction."
+},
+
+{
+title: "Indian Weavers",
+poet: "Sarojini Naidu",
+rhyme: "AABB",
+figures: "Alliteration, metaphor, imagery, symbolism, etc.",
+theme: "The weavers reply to questions about why they are weaving a particular piece of cloth of a certain colour at that time of day.",
+message: "The poem is dedicated to talented Indian weavers and the fabrics for which they were famous."
+},
+
+{
+title: "The Inchcape Rock",
+poet: "Robert Southey",
+rhyme: "AABB",
+figures: "Alliteration, repetition, simile, metaphor, etc.",
+theme: "The poem is about the Abbot who put the Inchcape Bell on a buoy to warn ships during storms. Rover, in a fit of madness, cut the bell to trouble the Abbot, but himself became a victim.",
+message: "As you sow, so shall you reap."
+},
+
+{
+title: "Have You Earned Your Tomorrow",
+poet: "Edgar Guest (American poet)",
+rhyme: "AABB",
+figures: "Alliteration, interrogation, etc.",
+theme: "It urges readers to be thoughtful in everyday life about the people around them. Each question makes us ask if we are kind, unselfish and patient.",
+message: "One's life is meaningful only if it is useful for humanity at large."
+},
+
+{
+title: "Father Returning Home",
+poet: "Dilip Chitre",
+rhyme: "Free verse",
+figures: "Alliteration, repetition, simile, metaphor, paradox, etc.",
+theme: "The silent and lonely journey of an old man coming home from a long day of work.",
+message: "Old people are our treasure. We should not forget their contributions in our lives and should accompany them."
+},
+
+{
+title: "Money",
+poet: "William H. Davies (Welsh poet)",
+rhyme: "ABAB",
+figures: "Alliteration, simile, repetition, inversion, etc.",
+theme: "The effect of money on the behaviour of people. The poet himself experiences the life of a poor person.",
+message: "To identify the difference between true and untrue friends. Money has no role in the happiness of life."
+},
+
+{
+title: "She Walks in Beauty",
+poet: "George Gordon Byron",
+rhyme: "ABABAB",
+figures: "Simile, metaphor, alliteration, repetition, personification, etc.",
+theme: "There are several themes. Each feature of the woman is praised. The poet speaks of harmony. The other theme is inner beauty.",
+message: "The importance of inner beauty, which makes external beauty possible."
+},
+
+{
+title: "Small Towns and Rivers",
+poet: "Mamang Dai",
+rhyme: "Free verse",
+figures: "Alliteration, repetition, simile, metaphor, personification, etc.",
+theme: "Preservation and conservation of natural elements in the vicinity.",
+message: "There is a need to protect and conserve the natural elements."
+}
+
+];
+
+/* APPRECIATION FIELDS */
+
+const fields = [
+  ["Poem", "title"],
+  ["Poet", "poet"],
+  ["Rhyme scheme", "rhyme"],
+  ["Figures of speech", "figures"],
+  ["Theme", "theme"],
+  ["Message", "message"]
+];
+
+let current = 0;
+
+const list = document.getElementById("poemList");
+const select = document.getElementById("poemSelect");
+const search = document.getElementById("search");
+
+/* WEBSITE NAVIGATION */
+
+function renderList() {
+
+  const query = search.value.toLowerCase().trim();
+  const chosen = select.value;
+
+  const shown = poems
+    .map((p, i) => ({p, i}))
+    .filter(({p, i}) =>
+      (chosen === "all" || Number(chosen) === i) &&
+      (p.title + " " + p.poet)
+        .toLowerCase()
+        .includes(query)
+    );
+
+  list.innerHTML = "";
+
+  shown.forEach(({p, i}) => {
+
+    const button = document.createElement("button");
+
+    button.className =
+      "poem-btn" + (i === current ? " active" : "");
+
+    button.innerHTML = `
+      <span class="num">${String(i+1).padStart(2,"0")}</span>
+      <span>${p.title}</span>
+    `;
+
+    button.onclick = () => showPoem(i);
+
+    list.appendChild(button);
+
+  });
+
+  document.getElementById("empty").style.display =
+    shown.length ? "none" : "block";
+
+  document.getElementById("appreciation").style.display =
+    shown.length ? "block" : "none";
+
+  if (shown.length && !shown.some(x => x.i === current)) {
+    showPoem(shown[0].i, false);
+  }
+
+}
+
+/* DISPLAY INDIVIDUAL POEM CARD */
+
+function showPoem(i, refresh = true) {
+
+  current = i;
+
+  const p = poems[i];
+
+  document.getElementById("appreciation").innerHTML = `
+
+    <div class="kicker">
+      POEM ${String(i+1).padStart(2,"0")} / 08 · APPRECIATION
+    </div>
+
+    <h2>${p.title}</h2>
+
+    <p class="byline">
+      Written by <strong>${p.poet}</strong>
+    </p>
+
+    <div class="info-grid">
+
+      <article class="info">
+
+        <div class="info-head">
+          <span class="info-icon">✍</span>
+          POET
+        </div>
+
+        <p>${p.poet}</p>
+
+      </article>
+
+      <article class="info">
+
+        <div class="info-head">
+          <span class="info-icon">♫</span>
+          RHYME SCHEME
+        </div>
+
+        <p>${p.rhyme}</p>
+
+      </article>
+
+      <article class="info full">
+
+        <div class="info-head">
+          <span class="info-icon">✧</span>
+          FIGURES OF SPEECH
+        </div>
+
+        <p>${p.figures}</p>
+
+      </article>
+
+      <article class="info full">
+
+        <div class="info-head">
+          <span class="info-icon">◇</span>
+          THEME
+        </div>
+
+        <p>${p.theme}</p>
+
+      </article>
+
+      <article class="info full message">
+
+        <div class="info-head">
+          <span class="info-icon">✦</span>
+          MESSAGE
+        </div>
+
+        <p>${p.message}</p>
+
+      </article>
+
+    </div>
+
+  `;
+
+  if (refresh) {
+    renderList();
+  }
+
+}
+
+/* BUILD SEPARATE PDF TABLE */
+
+function buildPDFTable() {
+
+  const head = document.getElementById("pdfHead");
+  const body = document.getElementById("pdfBody");
+
+  head.innerHTML = "";
+  body.innerHTML = "";
+
+  /* TABLE HEADER */
+
+  const headerRow = document.createElement("tr");
+
+  const first = document.createElement("th");
+
+  first.textContent = "APPRECIATION";
+
+  headerRow.appendChild(first);
+
+  poems.forEach((p, i) => {
+
+    const th = document.createElement("th");
+
+    th.textContent = `POEM ${i+1}\n${p.title}`;
+
+    headerRow.appendChild(th);
+
+  });
+
+  head.appendChild(headerRow);
+
+  /* TABLE BODY */
+
+  fields.forEach(([label, key]) => {
+
+    const tr = document.createElement("tr");
+
+    const th = document.createElement("th");
+
+    th.textContent = label;
+
+    tr.appendChild(th);
+
+    poems.forEach(p => {
+
+      const td = document.createElement("td");
+
+      td.textContent = p[key];
+
+      tr.appendChild(td);
+
+    });
+
+    body.appendChild(tr);
+
+  });
+
+}
+
+/* EXPORT PDF */
+
+function exportPDF() {
+
+  buildPDFTable();
+
+  window.print();
+
+}
+
+/* INITIALISE */
+
+poems.forEach((p, i) => {
+
+  const option = document.createElement("option");
+
+  option.value = i;
+
+  option.textContent =
+    `Poem ${i+1} · ${p.title}`;
+
+  select.appendChild(option);
+
+});
+
+search.addEventListener("input", renderList);
+
+select.addEventListener("change", renderList);
+
+renderList();
+
+showPoem(0);
+
+</script>
+
+</body>
+</html>
