@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +29,14 @@ body {
   line-height: 1.6;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* HEADER */
 
 header {
-  background: linear-gradient(
-    120deg,
-    #10377f,
-    #155eef,
-    #62aaff
-  );
+  background: linear-gradient(120deg, #10377f, #155eef, #62aaff);
   color: white;
   padding: 22px 6% 45px;
   position: relative;
@@ -84,13 +82,6 @@ header::after {
   letter-spacing: 2px;
 }
 
-.brand-tag {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: #d9e8ff;
-}
-
 .hero {
   margin-top: 40px;
   position: relative;
@@ -119,10 +110,6 @@ h1 {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 22px;
-}
-
-button {
-  cursor: pointer;
 }
 
 .btn {
@@ -254,7 +241,6 @@ select {
   text-align: left;
   padding: 10px 7px;
   border-radius: 11px;
-  cursor: pointer;
   color: #4a607f;
   font-size: 12px;
   display: flex;
@@ -288,7 +274,7 @@ select {
   color: white;
 }
 
-/* APPRECIATION CARDS */
+/* APPRECIATION CARD */
 
 .app-card {
   padding: clamp(20px, 3.5vw, 35px);
@@ -419,9 +405,10 @@ footer {
   margin-top: 2px;
 }
 
-/* PDF ONLY VIEW */
+/* PRINT VIEWS: HIDDEN ON WEBSITE */
 
-#printView {
+#printView,
+#websitePrintView {
   display: none;
 }
 
@@ -460,149 +447,311 @@ footer {
   }
 }
 
-/* PDF DESIGN - DIFFERENT FROM WEBSITE */
+/* PRINT SETTINGS */
+
+@page tablePage {
+  size: A3 landscape;
+  margin: 7mm;
+}
+
+@page websitePage {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+/* TABLE PDF */
+
+#printView {
+  page: tablePage;
+}
+
+.pdf-banner {
+  background: linear-gradient(110deg, #10377f, #155eef, #4c9cff);
+  color: white;
+  padding: 7mm 8mm;
+  margin-bottom: 5mm;
+}
+
+.pdf-brand {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.pdf-banner h1 {
+  font: bold 25px Georgia;
+  margin: 4px 0;
+  color: white;
+}
+
+.pdf-banner p {
+  font-size: 10px;
+  margin: 0;
+  color: #e6efff;
+}
+
+.pdf-meta {
+  float: right;
+  font-size: 9px;
+  border: 1px solid #ffffff70;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.pdf-table-wrap {
+  border: 1px solid #cbdcf4;
+  overflow: hidden;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.pdf-table thead th {
+  background: #e5efff;
+  color: #174a98;
+  font-size: 8.5px;
+  padding: 6px 4px;
+  border: 1px solid #c9daf3;
+  text-align: center;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.pdf-table thead th:first-child {
+  width: 10%;
+}
+
+.pdf-table thead th:not(:first-child) {
+  width: 11.25%;
+}
+
+.pdf-table tbody th {
+  background: #edf4ff;
+  color: #244b83;
+  text-align: left;
+  font-size: 8px;
+  padding: 6px 5px;
+  border: 1px solid #d4e0f0;
+  overflow-wrap: anywhere;
+}
+
+.pdf-table tbody td {
+  font-size: 7.5px;
+  line-height: 1.3;
+  color: #293f60;
+  padding: 6px 4px;
+  vertical-align: top;
+  border: 1px solid #dce5f1;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.pdf-table tbody tr:nth-child(even) td {
+  background: #f7faff;
+}
+
+.pdf-table tbody tr:first-child td {
+  font-weight: bold;
+  color: #1554b3;
+  background: #f0f6ff;
+}
+
+.pdf-footer {
+  margin-top: 5mm;
+  padding: 4mm 6mm;
+  background: #0d2e67;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+}
+
+.pdf-footer .s {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: white;
+  color: #155eef;
+  font: bold 15px Georgia;
+  margin-right: 7px;
+}
+
+/* WEBSITE-STYLE PDF */
+
+#websitePrintView {
+  page: websitePage;
+}
+
+.website-print-page {
+  page: websitePage;
+  min-height: 255mm;
+  display: flex;
+  flex-direction: column;
+  break-after: page;
+  page-break-after: always;
+}
+
+.website-print-page:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+.website-print-banner {
+  background: linear-gradient(120deg, #10377f, #155eef, #62aaff);
+  color: white;
+  padding: 13mm 12mm;
+  border-radius: 5px;
+}
+
+.website-print-brand {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.website-print-kicker {
+  margin-top: 15mm;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #d9e8ff;
+  font-weight: bold;
+}
+
+.website-print-banner h1 {
+  color: white;
+  font: bold 30px Georgia;
+  margin: 5px 0;
+}
+
+.website-print-banner p {
+  color: #e7f0ff;
+  font-size: 11px;
+  margin: 0;
+}
+
+.website-print-card {
+  margin-top: 10mm;
+  border: 1px solid #dce7f7;
+  border-radius: 9px;
+  padding: 10mm;
+  flex: 1;
+}
+
+.website-print-card .kicker {
+  font-size: 10px;
+}
+
+.website-print-card h2 {
+  font-size: 27px;
+  margin: 7px 0 3px;
+}
+
+.website-print-card .byline {
+  font-size: 12px;
+  margin-bottom: 8mm;
+}
+
+.website-print-card .info-grid {
+  gap: 5mm;
+}
+
+.website-print-card .info {
+  padding: 6mm;
+  border-radius: 7px;
+  break-inside: avoid;
+}
+
+.website-print-card .info-head {
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+
+.website-print-card .info-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.website-print-card .info p {
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.website-print-footer {
+  margin-top: auto;
+  padding: 6mm 5mm 0;
+  text-align: center;
+  color: #0d2e67;
+  border-top: 1px solid #dce7f7;
+  font-size: 10px;
+}
+
+.website-print-footer .footer-brand {
+  color: #0d2e67;
+  font-size: 11px;
+}
+
+.website-print-footer .footer-logo {
+  background: #155eef;
+  color: white;
+  width: 23px;
+  height: 23px;
+  font-size: 14px;
+}
+
+.website-print-footer .footer-note {
+  color: #6c7f9d;
+}
+
+/* PRINT MODE SWITCHING */
 
 @media print {
-
-  @page {
-    size: A3 landscape;
-    margin: 9mm;
-  }
-
-  html, body {
+  html,
+  body {
     background: white !important;
     color: #183153 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  header, main, footer {
+  body.print-table header,
+  body.print-table main,
+  body.print-table footer,
+  body.print-website header,
+  body.print-website main,
+  body.print-website footer {
     display: none !important;
   }
 
-  #printView {
+  body.print-table #printView {
     display: block !important;
   }
 
-  .pdf-banner {
-    background: linear-gradient(
-      110deg,
-      #10377f,
-      #155eef,
-      #4c9cff
-    ) !important;
-    color: white !important;
-    padding: 8mm 9mm;
-    margin-bottom: 6mm;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  body.print-website #websitePrintView {
+    display: block !important;
   }
 
-  .pdf-brand {
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 2px;
+  body.print-table #websitePrintView,
+  body.print-website #printView {
+    display: none !important;
   }
 
-  .pdf-banner h1 {
-    font: bold 27px Georgia;
-    margin: 5px 0;
-    color: white;
+  body.print-table .pdf-banner,
+  body.print-table .pdf-footer,
+  body.print-website .website-print-banner {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
-  .pdf-banner p {
-    font-size: 10px;
-    margin: 0;
-    color: #e6efff;
-  }
-
-  .pdf-meta {
-    float: right;
-    font-size: 9px;
-    border: 1px solid #ffffff70;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-
-  .pdf-table-wrap {
-    border: 1px solid #cbdcf4;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
-
-  thead th {
-    background: #e5efff !important;
-    color: #174a98;
-    font-size: 8px;
-    padding: 9px 6px;
-    border: 1px solid #c9daf3;
-    text-align: center;
-  }
-
-  thead th:first-child {
-    width: 10%;
-  }
-
-  tbody th {
-    background: #edf4ff !important;
-    color: #244b83;
-    text-align: left;
-    font-size: 8px;
-    padding: 9px 6px;
-    border: 1px solid #d4e0f0;
-  }
-
-  tbody td {
-    font-size: 7.5px;
-    line-height: 1.4;
-    color: #293f60;
-    padding: 9px 6px;
-    vertical-align: top;
-    border: 1px solid #dce5f1;
-    overflow-wrap: anywhere;
-  }
-
-  tbody tr:nth-child(even) td {
-    background: #f7faff !important;
-  }
-
-  tbody tr:first-child td {
-    font-weight: bold;
-    color: #1554b3;
-    background: #f0f6ff !important;
-  }
-
-  tr {
+  body.print-table .pdf-table tr {
     break-inside: avoid;
-  }
-
-  .pdf-footer {
-    margin-top: 6mm;
-    padding: 5mm 7mm;
-    background: #0d2e67 !important;
-    color: white !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 10px;
-  }
-
-  .pdf-footer .s {
-    display: inline-grid;
-    place-items: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 6px;
-    background: white;
-    color: #155eef;
-    font: bold 15px Georgia;
-    margin-right: 7px;
+    page-break-inside: avoid;
   }
 }
 </style>
@@ -611,17 +760,13 @@ footer {
 <body>
 
 <header>
-
   <div class="nav">
     <div class="brand">
       <div class="logo">S</div>
-      <div>
-        <div class="brand-name">STUDY-HUB</div>
-        
-      </div>
+      <div class="brand-name">STUDY-HUB</div>
     </div>
 
-    <span> ENGLISH •</br> POETRY APPRECIATION</span>
+    <span>ENGLISH •<br>POETRY APPRECIATION</span>
   </div>
 
   <div class="hero">
@@ -640,16 +785,14 @@ footer {
         ↓ Export PDF · Table Format
       </button>
 
-      <button class="btn btn-secondary" onclick="window.print()">
-        Print / Save PDF
+      <button class="btn btn-secondary" onclick="printWebsite()">
+        Print / Save PDF · Website Format
       </button>
     </div>
   </div>
-
 </header>
 
 <main>
-
   <section class="intro">
     <div>
       <strong>Poem Collection</strong>
@@ -660,7 +803,6 @@ footer {
   </section>
 
   <div class="toolbar">
-
     <div class="search">
       <input
         id="search"
@@ -672,100 +814,65 @@ footer {
     <select id="poemSelect">
       <option value="all">All poems</option>
     </select>
-
   </div>
 
   <div class="layout">
-
     <aside class="sidebar">
-
-      <div class="side-title">
-        POEM COLLECTION · 08
-      </div>
-
+      <div class="side-title">POEM COLLECTION · 08</div>
       <nav class="poem-list" id="poemList"></nav>
-
     </aside>
 
     <section class="app-card">
-
       <div id="appreciation"></div>
-
-      <div class="empty" id="empty">
-        No matching poem found.
-      </div>
-
+      <div class="empty" id="empty">No matching poem found.</div>
     </section>
-
   </div>
-
 </main>
 
-<!-- SEPARATE PDF DESIGN -->
+<!-- TABLE PDF VIEW -->
 
 <section id="printView">
-
   <div class="pdf-banner">
+    <div class="pdf-meta">ACADEMIC YEAR 2026–27 | 08 POEMS</div>
 
-    <div class="pdf-brand">
-      STUDY-HUB · LEARN • GROW • ACHIEVE
-    </div>
-
-    <div class="pdf-meta">
-      ACADEMIC YEAR 2026–27 | 08 POEMS
-    </div>
+    <div class="pdf-brand">STUDY-HUB · LEARN • GROW • ACHIEVE</div>
 
     <h1>English Appreciation</h1>
 
-    <p>
-      Complete Poetry Appreciation Guide
-      — All Poems at a Glance
-    </p>
-
+    <p>Complete Poetry Appreciation Guide — All Poems at a Glance</p>
   </div>
 
   <div class="pdf-table-wrap">
-
-    <table>
-
+    <table class="pdf-table">
       <thead id="pdfHead"></thead>
-
       <tbody id="pdfBody"></tbody>
-
     </table>
-
   </div>
 
   <div class="pdf-footer">
-
     <span>
       <span class="s">S</span>
-      STUDY-HUB
+      <strong>STUDY-HUB</strong>
     </span>
-
-    <span>© 2026–27 STUDY-HUB,</span>
-
+    <span>© 2026–27 STUDY-HUB</span>
   </div>
-
 </section>
 
-<!-- CENTERED FOOTER -->
+<!-- WEBSITE-STYLE PDF VIEW -->
+
+<section id="websitePrintView"></section>
+
+<!-- WEBSITE FOOTER -->
 
 <footer>
-
   <div class="footer-inner">
-
     <div class="footer-brand">
       <span class="footer-logo">S</span>
       <span>STUDY-HUB</span>
     </div>
 
-    <div class="footer-note">
-      © 2026–27 STUDY-HUB,
-    </div>
-
+    <div class="footer-note">© 2026–27 STUDY-HUB</div>
   </div>
-
 </footer>
 
 <script>
@@ -773,79 +880,70 @@ footer {
 /* POEM DATA */
 
 const poems = [
-
-{
-title: "Song of the Open Road",
-poet: "Walt Whitman",
-rhyme: "Free verse",
-figures: "Alliteration, repetition, metaphor, paradox, etc.",
-theme: "Freedom, joy and optimism are the major themes. The poet encourages the reader to be true to themselves and live a free life.",
-message: "The poem inspires us to explore the world using our abilities. Comfort, complaint, criticism and fate are not excuses for inaction."
-},
-
-{
-title: "Indian Weavers",
-poet: "Sarojini Naidu",
-rhyme: "AABB",
-figures: "Alliteration, metaphor, imagery, symbolism, etc.",
-theme: "The weavers reply to questions about why they are weaving a particular piece of cloth of a certain colour at that time of day.",
-message: "The poem is dedicated to talented Indian weavers and the fabrics for which they were famous."
-},
-
-{
-title: "The Inchcape Rock",
-poet: "Robert Southey",
-rhyme: "AABB",
-figures: "Alliteration, repetition, simile, metaphor, etc.",
-theme: "The poem is about the Abbot who put the Inchcape Bell on a buoy to warn ships during storms. Rover, in a fit of madness, cut the bell to trouble the Abbot, but himself became a victim.",
-message: "As you sow, so shall you reap."
-},
-
-{
-title: "Have You Earned Your Tomorrow",
-poet: "Edgar Guest (American poet)",
-rhyme: "AABB",
-figures: "Alliteration, interrogation, etc.",
-theme: "It urges readers to be thoughtful in everyday life about the people around them. Each question makes us ask if we are kind, unselfish and patient.",
-message: "One's life is meaningful only if it is useful for humanity at large."
-},
-
-{
-title: "Father Returning Home",
-poet: "Dilip Chitre",
-rhyme: "Free verse",
-figures: "Alliteration, repetition, simile, metaphor, paradox, etc.",
-theme: "The silent and lonely journey of an old man coming home from a long day of work.",
-message: "Old people are our treasure. We should not forget their contributions in our lives and should accompany them."
-},
-
-{
-title: "Money",
-poet: "William H. Davies (Welsh poet)",
-rhyme: "ABAB",
-figures: "Alliteration, simile, repetition, inversion, etc.",
-theme: "The effect of money on the behaviour of people. The poet himself experiences the life of a poor person.",
-message: "To identify the difference between true and untrue friends. Money has no role in the happiness of life."
-},
-
-{
-title: "She Walks in Beauty",
-poet: "George Gordon Byron",
-rhyme: "ABABAB",
-figures: "Simile, metaphor, alliteration, repetition, personification, etc.",
-theme: "There are several themes. Each feature of the woman is praised. The poet speaks of harmony. The other theme is inner beauty.",
-message: "The importance of inner beauty, which makes external beauty possible."
-},
-
-{
-title: "Small Towns and Rivers",
-poet: "Mamang Dai",
-rhyme: "Free verse",
-figures: "Alliteration, repetition, simile, metaphor, personification, etc.",
-theme: "Preservation and conservation of natural elements in the vicinity.",
-message: "There is a need to protect and conserve the natural elements."
-}
-
+  {
+    title: "Song of the Open Road",
+    poet: "Walt Whitman",
+    rhyme: "Free verse",
+    figures: "Alliteration, repetition, metaphor, paradox, etc.",
+    theme: "Freedom, joy and optimism are the major themes. The poet encourages the reader to be true to themselves and live a free life.",
+    message: "The poem inspires us to explore the world using our abilities. Comfort, complaint, criticism and fate are not excuses for inaction."
+  },
+  {
+    title: "Indian Weavers",
+    poet: "Sarojini Naidu",
+    rhyme: "AABB",
+    figures: "Alliteration, metaphor, imagery, symbolism, etc.",
+    theme: "The weavers reply to questions about why they are weaving a particular piece of cloth of a certain colour at that time of day.",
+    message: "The poem is dedicated to talented Indian weavers and the fabrics for which they were famous."
+  },
+  {
+    title: "The Inchcape Rock",
+    poet: "Robert Southey",
+    rhyme: "AABB",
+    figures: "Alliteration, repetition, simile, metaphor, etc.",
+    theme: "The poem is about the Abbot who put the Inchcape Bell on a buoy to warn ships during storms. Rover, in a fit of madness, cut the bell to trouble the Abbot, but himself became a victim.",
+    message: "As you sow, so shall you reap."
+  },
+  {
+    title: "Have You Earned Your Tomorrow",
+    poet: "Edgar Guest (American poet)",
+    rhyme: "AABB",
+    figures: "Alliteration, interrogation, etc.",
+    theme: "It urges readers to be thoughtful in everyday life about the people around them. Each question makes us ask if we are kind, unselfish and patient.",
+    message: "One's life is meaningful only if it is useful for humanity at large."
+  },
+  {
+    title: "Father Returning Home",
+    poet: "Dilip Chitre",
+    rhyme: "Free verse",
+    figures: "Alliteration, repetition, simile, metaphor, paradox, etc.",
+    theme: "The silent and lonely journey of an old man coming home from a long day of work.",
+    message: "Old people are our treasure. We should not forget their contributions in our lives and should accompany them."
+  },
+  {
+    title: "Money",
+    poet: "William H. Davies (Welsh poet)",
+    rhyme: "ABAB",
+    figures: "Alliteration, simile, repetition, inversion, etc.",
+    theme: "The effect of money on the behaviour of people. The poet himself experiences the life of a poor person.",
+    message: "To identify the difference between true and untrue friends. Money has no role in the happiness of life."
+  },
+  {
+    title: "She Walks in Beauty",
+    poet: "George Gordon Byron",
+    rhyme: "ABABAB",
+    figures: "Simile, metaphor, alliteration, repetition, personification, etc.",
+    theme: "There are several themes. Each feature of the woman is praised. The poet speaks of harmony. The other theme is inner beauty.",
+    message: "The importance of inner beauty, which makes external beauty possible."
+  },
+  {
+    title: "Small Towns and Rivers",
+    poet: "Mamang Dai",
+    rhyme: "Free verse",
+    figures: "Alliteration, repetition, simile, metaphor, personification, etc.",
+    theme: "Preservation and conservation of natural elements in the vicinity.",
+    message: "There is a need to protect and conserve the natural elements."
+  }
 ];
 
 /* APPRECIATION FIELDS */
@@ -868,7 +966,6 @@ const search = document.getElementById("search");
 /* WEBSITE NAVIGATION */
 
 function renderList() {
-
   const query = search.value.toLowerCase().trim();
   const chosen = select.value;
 
@@ -876,29 +973,28 @@ function renderList() {
     .map((p, i) => ({p, i}))
     .filter(({p, i}) =>
       (chosen === "all" || Number(chosen) === i) &&
-      (p.title + " " + p.poet)
-        .toLowerCase()
-        .includes(query)
+      (p.title + " " + p.poet).toLowerCase().includes(query)
     );
 
   list.innerHTML = "";
 
   shown.forEach(({p, i}) => {
-
     const button = document.createElement("button");
 
     button.className =
       "poem-btn" + (i === current ? " active" : "");
 
-    button.innerHTML = `
-      <span class="num">${String(i+1).padStart(2,"0")}</span>
-      <span>${p.title}</span>
-    `;
+    const number = document.createElement("span");
+    number.className = "num";
+    number.textContent = String(i + 1).padStart(2, "0");
 
+    const title = document.createElement("span");
+    title.textContent = p.title;
+
+    button.append(number, title);
     button.onclick = () => showPoem(i);
 
     list.appendChild(button);
-
   });
 
   document.getElementById("empty").style.display =
@@ -910,21 +1006,18 @@ function renderList() {
   if (shown.length && !shown.some(x => x.i === current)) {
     showPoem(shown[0].i, false);
   }
-
 }
 
 /* DISPLAY INDIVIDUAL POEM CARD */
 
 function showPoem(i, refresh = true) {
-
   current = i;
 
   const p = poems[i];
 
   document.getElementById("appreciation").innerHTML = `
-
     <div class="kicker">
-      POEM ${String(i+1).padStart(2,"0")} / 08 · APPRECIATION
+      POEM ${String(i + 1).padStart(2, "0")} / 08 · APPRECIATION
     </div>
 
     <h2>${p.title}</h2>
@@ -934,166 +1027,227 @@ function showPoem(i, refresh = true) {
     </p>
 
     <div class="info-grid">
-
       <article class="info">
-
         <div class="info-head">
           <span class="info-icon">✍</span>
           POET
         </div>
-
         <p>${p.poet}</p>
-
       </article>
 
       <article class="info">
-
         <div class="info-head">
           <span class="info-icon">♫</span>
           RHYME SCHEME
         </div>
-
         <p>${p.rhyme}</p>
-
       </article>
 
       <article class="info full">
-
         <div class="info-head">
           <span class="info-icon">✧</span>
           FIGURES OF SPEECH
         </div>
-
         <p>${p.figures}</p>
-
       </article>
 
       <article class="info full">
-
         <div class="info-head">
           <span class="info-icon">◇</span>
           THEME
         </div>
-
         <p>${p.theme}</p>
-
       </article>
 
       <article class="info full message">
-
         <div class="info-head">
           <span class="info-icon">✦</span>
           MESSAGE
         </div>
-
         <p>${p.message}</p>
-
       </article>
-
     </div>
-
   `;
 
   if (refresh) {
     renderList();
   }
-
 }
 
-/* BUILD SEPARATE PDF TABLE */
+/* BUILD ONE-PAGE TABLE PDF */
 
 function buildPDFTable() {
-
   const head = document.getElementById("pdfHead");
   const body = document.getElementById("pdfBody");
 
   head.innerHTML = "";
   body.innerHTML = "";
 
-  /* TABLE HEADER */
+  /* HEADER: APPRECIATION + EIGHT POEMS */
 
   const headerRow = document.createElement("tr");
 
   const first = document.createElement("th");
-
   first.textContent = "APPRECIATION";
-
   headerRow.appendChild(first);
 
   poems.forEach((p, i) => {
-
     const th = document.createElement("th");
-
-    th.textContent = `POEM ${i+1}\n${p.title}`;
-
+    th.textContent = `POEM ${i + 1}\n${p.title}`;
     headerRow.appendChild(th);
-
   });
 
   head.appendChild(headerRow);
 
-  /* TABLE BODY */
+  /* ROWS: POEM, POET, RHYME, FIGURES, THEME, MESSAGE */
 
   fields.forEach(([label, key]) => {
-
     const tr = document.createElement("tr");
 
     const th = document.createElement("th");
-
     th.textContent = label;
-
     tr.appendChild(th);
 
     poems.forEach(p => {
-
       const td = document.createElement("td");
-
       td.textContent = p[key];
-
       tr.appendChild(td);
-
     });
 
     body.appendChild(tr);
-
   });
-
 }
 
-/* EXPORT PDF */
+/* BUILD EIGHT WEBSITE-STYLE PRINT PAGES */
+
+function buildWebsitePrint() {
+  const view = document.getElementById("websitePrintView");
+  view.innerHTML = "";
+
+  poems.forEach((p, i) => {
+    const page = document.createElement("section");
+    page.className = "website-print-page";
+
+    const banner = document.createElement("div");
+    banner.className = "website-print-banner";
+    banner.innerHTML = `
+      <div class="website-print-brand">STUDY-HUB · LEARN • GROW • ACHIEVE</div>
+      <div class="website-print-kicker">ENGLISH POETRY APPRECIATION</div>
+      <h1>English Appreciation</h1>
+      <p>Complete Poetry Appreciation Guide</p>
+    `;
+
+    const card = document.createElement("div");
+    card.className = "website-print-card";
+
+    const kicker = document.createElement("div");
+    kicker.className = "kicker";
+    kicker.textContent =
+      `POEM ${String(i + 1).padStart(2, "0")} / 08 · APPRECIATION`;
+
+    const title = document.createElement("h2");
+    title.textContent = p.title;
+
+    const byline = document.createElement("p");
+    byline.className = "byline";
+    byline.textContent = `Written by ${p.poet}`;
+
+    const grid = document.createElement("div");
+    grid.className = "info-grid";
+
+    const cardFields = [
+      ["✍", "POET", p.poet, false],
+      ["♫", "RHYME SCHEME", p.rhyme, false],
+      ["✧", "FIGURES OF SPEECH", p.figures, true],
+      ["◇", "THEME", p.theme, true],
+      ["✦", "MESSAGE", p.message, true]
+    ];
+
+    cardFields.forEach(([symbol, label, value, full]) => {
+      const article = document.createElement("article");
+      article.className = "info" +
+        (full ? " full" : "") +
+        (label === "MESSAGE" ? " message" : "");
+
+      const heading = document.createElement("div");
+      heading.className = "info-head";
+
+      const icon = document.createElement("span");
+      icon.className = "info-icon";
+      icon.textContent = symbol;
+
+      heading.append(icon, document.createTextNode(label));
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = value;
+
+      article.append(heading, paragraph);
+      grid.appendChild(article);
+    });
+
+    card.append(kicker, title, byline, grid);
+
+    const footer = document.createElement("div");
+    footer.className = "website-print-footer";
+    footer.innerHTML = `
+      <div class="footer-brand">
+        <span class="footer-logo">S</span>
+        <span>STUDY-HUB</span>
+      </div>
+      <div class="footer-note">© 2026–27 STUDY-HUB</div>
+    `;
+
+    page.append(banner, card, footer);
+    view.appendChild(page);
+  });
+}
+
+/* PRINT TABLE FORMAT */
 
 function exportPDF() {
-
   buildPDFTable();
 
-  window.print();
+  document.body.classList.remove("print-website");
+  document.body.classList.add("print-table");
 
+  window.print();
 }
 
-/* INITIALISE */
+/* PRINT WEBSITE FORMAT */
+
+function printWebsite() {
+  buildWebsitePrint();
+
+  document.body.classList.remove("print-table");
+  document.body.classList.add("print-website");
+
+  window.print();
+}
+
+/* RESTORE WEBSITE AFTER PRINTING */
+
+function resetPrintMode() {
+  document.body.classList.remove("print-table", "print-website");
+}
+
+window.addEventListener("afterprint", resetPrintMode);
+
+/* INITIALISE WEBSITE */
 
 poems.forEach((p, i) => {
-
   const option = document.createElement("option");
-
   option.value = i;
-
-  option.textContent =
-    `Poem ${i+1} · ${p.title}`;
-
+  option.textContent = `Poem ${i + 1} · ${p.title}`;
   select.appendChild(option);
-
 });
 
 search.addEventListener("input", renderList);
-
 select.addEventListener("change", renderList);
 
 renderList();
-
 showPoem(0);
 
 </script>
 
 </body>
-</html>
+  </html>
